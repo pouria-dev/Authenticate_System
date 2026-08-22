@@ -17,21 +17,27 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <form>
+        <form method="post">
 
+            {% csrf_token %}
+                <div> 
 
-                <label for="username"> Username </label><br>
-                <input id="username" type="text" name="username" value="username"><br>
+                    {{form.non_field_errors}}
+
+                </div>
                 
-                <br>
+                <br><br>
 
-                <label for="pwd"> Password </label><br>
-                <input type="password" name="password" id="pwd"> 
-                <input type="checkbox" onclick="myFunction()">Show Password
+                {{form.email.label}}<br>
+                {{form.email}}
 
-        </form>
-        
-       <script>
+                <br><br> 
+
+                {{form.password.label}}<br>
+                {{form.password}}
+
+
+                       <script>
 function myFunction() {
   var x = document.getElementById("myInput");
   if (x.type === "password") {
@@ -41,5 +47,17 @@ function myFunction() {
   }
 }
 </script>
+                
+                <input type="checkbox" onclick="myFunction()">Show Password 
+
+                <br><br>
+
+                <input type="submit" > 
+
+
+
+        </form>
+        
+
     </body>
 </html>

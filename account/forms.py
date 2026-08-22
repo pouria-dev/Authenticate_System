@@ -13,8 +13,8 @@ from django.core.exceptions import ValidationError
 
 
 class UserAuthenticationForm(forms.Form):
-    email = forms.EmailField(max_length=30, required=True)
-    password = forms.CharField(max_length=30, required=True , widget=forms.PasswordInput()) 
+    email = forms.EmailField(max_length=30, required=True ,label="email")
+    password = forms.CharField(max_length=30, required=True , label= "password", widget=forms.PasswordInput()) 
 
 
 
